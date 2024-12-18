@@ -24,10 +24,10 @@ for (let i = 0; i < left.length; i++) {
   sum += Math.abs(left[i] - right[i]);
 }
 
-console.log("The answer for day 1 part 1 is:", sum);
+console.log(`The answer for day 1 part 1 is: ${sum}.\n`);
 
 // Part 2
-console.log("\n\nCalculating the answer for day 1 part 2...");
+console.log("Calculating the answer for day 1 part 2...");
 
 const rightMap = {};
 
@@ -47,4 +47,4 @@ left.forEach((num) => {
   }
 });
 
-console.log("The answer for day 1 part 2 is:", similarityScore);
+console.log(`The answer for day 1 part 2 is: ${similarityScore}.`);

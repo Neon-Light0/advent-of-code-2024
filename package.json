@@ -5,7 +5,8 @@
   "description": "A bit of fun before Christmas.",
   "main": "index.js",
   "scripts": {
-    "d1p1": "node ./day1/index.js"
+    "day1": "node ./day1/index.js",
+    "day2": "node ./day2/index.js"
   },
   "repository": {
     "type": "git",
