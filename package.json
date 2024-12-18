@@ -1,0 +1,20 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A bit of fun before Christmas.",
+  "main": "index.js",
+  "scripts": {
+    "d1p1": "node ./day1/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neon-Light0/advent-of-code-2024.git"
+  },
+  "author": "Brian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Neon-Light0/advent-of-code-2024/issues"
+  },
+  "homepage": "https://github.com/Neon-Light0/advent-of-code-2024#readme"
+}
