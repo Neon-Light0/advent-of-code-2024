@@ -62,6 +62,8 @@ function isStrictlyDecreasingWithTolerance(line, limit) {
   return 1;
 }
 
+console.time("part 1 execution time ");
+
 let nSafeReports = 0;
 
 input.forEach((line) => {
@@ -71,11 +73,13 @@ input.forEach((line) => {
   );
 });
 
+console.timeEnd("part 1 execution time ");
 console.log(`The answer for day 2 part 1 is: ${nSafeReports}.\n`);
 
 // Part 2
 console.log("Calculating the answer for day 2 part 2...");
 
+console.time("part 2 execution time ");
 let nSafeReportsWithTolerate = 0;
 
 input.forEach((line) => {
@@ -85,4 +89,5 @@ input.forEach((line) => {
   );
 });
 
+console.timeEnd("part 2 execution time ");
 console.log(`The answer for day 2 part 2 is: ${nSafeReportsWithTolerate}.\n`);

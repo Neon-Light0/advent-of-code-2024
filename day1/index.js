@@ -6,6 +6,8 @@ console.log("Calculating the answer for day 1 part 1...");
 const input = fs.readFileSync("./day1/input.txt", "utf-8");
 const lines = input.split("\n");
 
+console.time("Part 1 execution time");
+
 const left = [];
 const right = [];
 
@@ -24,11 +26,13 @@ for (let i = 0; i < left.length; i++) {
   sum += Math.abs(left[i] - right[i]);
 }
 
+console.timeEnd("Part 1 execution time");
 console.log(`The answer for day 1 part 1 is: ${sum}.\n`);
 
 // Part 2
 console.log("Calculating the answer for day 1 part 2...");
 
+console.time("Part 2 execution time");
 const rightMap = {};
 
 right.forEach((num) => {
@@ -47,4 +51,5 @@ left.forEach((num) => {
   }
 });
 
+console.timeEnd("Part 2 execution time");
 console.log(`The answer for day 1 part 2 is: ${similarityScore}.`);
