@@ -18,14 +18,8 @@ function isStrictlyIncreasingWithTolerance(line, limit) {
     if (diff > 3 || diff <= 0) {
       if (limit === 0) return 0;
       return Math.max(
-        isStrictlyIncreasingWithTolerance(
-          [...line.slice(0, i - 1), ...line.slice(i)],
-          limit - 1
-        ),
-        isStrictlyIncreasingWithTolerance(
-          [...line.slice(0, i), ...line.slice(i + 1)],
-          limit - 1
-        )
+        isStrictlyIncreasingWithTolerance([...line.slice(0, i - 1), ...line.slice(i)], limit - 1),
+        isStrictlyIncreasingWithTolerance([...line.slice(0, i), ...line.slice(i + 1)], limit - 1)
       );
     }
 
@@ -45,14 +39,8 @@ function isStrictlyDecreasingWithTolerance(line, limit) {
     if (diff > 3 || diff <= 0) {
       if (limit === 0) return 0;
       return Math.max(
-        isStrictlyDecreasingWithTolerance(
-          [...line.slice(0, i - 1), ...line.slice(i)],
-          limit - 1
-        ),
-        isStrictlyDecreasingWithTolerance(
-          [...line.slice(0, i), ...line.slice(i + 1)],
-          limit - 1
-        )
+        isStrictlyDecreasingWithTolerance([...line.slice(0, i - 1), ...line.slice(i)], limit - 1),
+        isStrictlyDecreasingWithTolerance([...line.slice(0, i), ...line.slice(i + 1)], limit - 1)
       );
     }
 
@@ -62,24 +50,21 @@ function isStrictlyDecreasingWithTolerance(line, limit) {
   return 1;
 }
 
-console.time("part 1 execution time ");
+console.time("Part 1 execution time ");
 
 let nSafeReports = 0;
 
 input.forEach((line) => {
-  nSafeReports += Math.max(
-    isStrictlyIncreasingWithTolerance(line, 0),
-    isStrictlyDecreasingWithTolerance(line, 0)
-  );
+  nSafeReports += Math.max(isStrictlyIncreasingWithTolerance(line, 0), isStrictlyDecreasingWithTolerance(line, 0));
 });
 
-console.timeEnd("part 1 execution time ");
+console.timeEnd("Part 1 execution time ");
 console.log(`The answer for day 2 part 1 is: ${nSafeReports}.\n`);
 
 // Part 2
 console.log("Calculating the answer for day 2 part 2...");
 
-console.time("part 2 execution time ");
+console.time("Part 2 execution time ");
 let nSafeReportsWithTolerate = 0;
 
 input.forEach((line) => {
@@ -89,5 +74,5 @@ input.forEach((line) => {
   );
 });
 
-console.timeEnd("part 2 execution time ");
+console.timeEnd("Part 2 execution time ");
 console.log(`The answer for day 2 part 2 is: ${nSafeReportsWithTolerate}.\n`);
