@@ -1,26 +1,27 @@
 {
-  "name": "advent-of-code-2024",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "A bit of fun before Christmas.",
-  "main": "index.js",
-  "scripts": {
-    "day1": "node ./day1/index.js",
-    "day2": "node ./day2/index.js",
-    "day3": "node ./day3/index.js",
-    "day4": "node ./day4/index.js",
-    "day5": "node ./day5/index.js",
-    "day6": "node ./day6/index.js",
-    "day7": "node ./day7/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Neon-Light0/advent-of-code-2024.git"
-  },
-  "author": "Brian",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Neon-Light0/advent-of-code-2024/issues"
-  },
-  "homepage": "https://github.com/Neon-Light0/advent-of-code-2024#readme"
+    "name": "advent-of-code-2024",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "A bit of fun before Christmas.",
+    "main": "index.js",
+    "scripts": {
+        "day1": "node ./day1/index.js",
+        "day2": "node ./day2/index.js",
+        "day3": "node ./day3/index.js",
+        "day4": "node ./day4/index.js",
+        "day5": "node ./day5/index.js",
+        "day6": "node ./day6/index.js",
+        "day7": "node ./day7/index.js",
+        "day8": "node ./day8/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Neon-Light0/advent-of-code-2024.git"
+    },
+    "author": "Brian",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Neon-Light0/advent-of-code-2024/issues"
+    },
+    "homepage": "https://github.com/Neon-Light0/advent-of-code-2024#readme"
 }
