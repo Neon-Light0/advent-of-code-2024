@@ -12,9 +12,9 @@ const left = [];
 const right = [];
 
 lines.forEach((line) => {
-  const [l, r] = line.split("   ");
-  left.push(Number(l));
-  right.push(Number(r));
+    const [l, r] = line.split("   ");
+    left.push(Number(l));
+    right.push(Number(r));
 });
 
 left.sort((a, b) => a - b);
@@ -23,7 +23,7 @@ right.sort((a, b) => a - b);
 let sum = 0;
 
 for (let i = 0; i < left.length; i++) {
-  sum += Math.abs(left[i] - right[i]);
+    sum += Math.abs(left[i] - right[i]);
 }
 
 console.timeEnd("Part 1 execution time");
@@ -36,19 +36,19 @@ console.time("Part 2 execution time");
 const rightMap = {};
 
 right.forEach((num) => {
-  if (rightMap[num]) {
-    rightMap[num]++;
-  } else {
-    rightMap[num] = 1;
-  }
+    if (rightMap[num]) {
+        rightMap[num]++;
+    } else {
+        rightMap[num] = 1;
+    }
 });
 
 let similarityScore = 0;
 
 left.forEach((num) => {
-  if (rightMap[num]) {
-    similarityScore += num * rightMap[num];
-  }
+    if (rightMap[num]) {
+        similarityScore += num * rightMap[num];
+    }
 });
 
 console.timeEnd("Part 2 execution time");

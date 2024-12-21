@@ -12,7 +12,7 @@ const matches = input.matchAll(regex);
 let sum = 0;
 
 matches.forEach((match) => {
-  sum += match[1] * match[2];
+    sum += match[1] * match[2];
 });
 
 console.timeEnd("Part one execution time");
@@ -29,13 +29,13 @@ sum = 0;
 let enable = true;
 
 matches2.forEach((match) => {
-  if (match[0] === "do()") {
-    enable = true;
-  } else if (match[0] === "don't()") {
-    enable = false;
-  } else if (enable) {
-    sum += match[1] * match[2];
-  }
+    if (match[0] === "do()") {
+        enable = true;
+    } else if (match[0] === "don't()") {
+        enable = false;
+    } else if (enable) {
+        sum += match[1] * match[2];
+    }
 });
 
 console.timeEnd("Part two execution time");
