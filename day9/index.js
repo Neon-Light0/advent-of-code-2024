@@ -1,5 +1,4 @@
 import fs from "fs";
-import MinHeap from "min-heap";
 
 const input = fs.readFileSync("./day9/input.txt", "utf8").trim();
 
