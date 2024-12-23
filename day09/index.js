@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const input = fs.readFileSync("./day9/input.txt", "utf8").trim();
+const input = fs.readFileSync("./day09/input.txt", "utf8").trim();
 
 console.log("Calculating the answer for part one...");
 

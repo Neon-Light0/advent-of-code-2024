@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const equations = fs.readFileSync("./day7/input.txt", "utf-8").split("\n");
+const equations = fs.readFileSync("./day07/input.txt", "utf-8").split("\n");
 const values = equations.map((equation) => {
     const [lhs, rhs] = equation.split(":");
     return lhs;

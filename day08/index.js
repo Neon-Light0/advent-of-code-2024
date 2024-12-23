@@ -3,7 +3,7 @@ import fs from "fs";
 console.log("Calculating the anwser to day 8...\n");
 
 const grid = fs
-    .readFileSync("./day8/input.txt", "utf-8")
+    .readFileSync("./day08/input.txt", "utf-8")
     .split("\n")
     .map((line) => line.trim().split(""));
 

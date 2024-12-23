@@ -4,7 +4,7 @@ import fs from "fs";
 console.log("Calculating the answer for day 4 part 1...");
 
 const input = fs
-    .readFileSync("./day4/input.txt", "utf-8")
+    .readFileSync("./day04/input.txt", "utf-8")
     .split("\n")
     .map((line) => line.split(""));
 

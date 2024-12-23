@@ -3,7 +3,7 @@ import fs from "fs";
 // Part 1
 console.log("Calculating the answer for day 5...");
 console.time("Total execution time");
-const [rules, pages] = fs.readFileSync("./day5/input.txt", "utf-8").split(/\n\s*\n/);
+const [rules, pages] = fs.readFileSync("./day05/input.txt", "utf-8").split(/\n\s*\n/);
 const rulesMap = new Map();
 
 rules.split("\n").map((rule) => {

@@ -3,7 +3,7 @@ import fs from "fs";
 // Part 1
 console.log("Calculating the answer for day 1 part 1...");
 
-const input = fs.readFileSync("./day1/input.txt", "utf-8");
+const input = fs.readFileSync("./day01/input.txt", "utf-8");
 const lines = input.split("\n");
 
 console.time("Part 1 execution time");

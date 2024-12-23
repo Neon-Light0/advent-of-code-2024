@@ -3,7 +3,7 @@ import fs from "fs";
 // Part 1
 console.log("Calculating the answer for day 3 part 1...");
 
-const input = fs.readFileSync("./day3/input.txt", "utf-8");
+const input = fs.readFileSync("./day03/input.txt", "utf-8");
 
 console.time("Part one execution time");
 const regex = /mul\((\d+),(\d+)\)/g;
