@@ -19,7 +19,8 @@
         "day12": "node ./day12/index.js",
         "day13": "node ./day13/index.js",
         "day14": "node ./day14/index.js",
-        "day15": "node ./day15/index.js"
+        "day15": "node ./day15/index.js",
+        "day16": "node ./day16/index.js"
     },
     "repository": {
         "type": "git",
@@ -30,5 +31,8 @@
     "bugs": {
         "url": "https://github.com/Neon-Light0/advent-of-code-2024/issues"
     },
-    "homepage": "https://github.com/Neon-Light0/advent-of-code-2024#readme"
+    "homepage": "https://github.com/Neon-Light0/advent-of-code-2024#readme",
+    "dependencies": {
+        "collections": "^5.1.13"
+    }
 }
