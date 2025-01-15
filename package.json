@@ -22,7 +22,9 @@
         "day15": "node ./day15/index.js",
         "day16": "node ./day16/index.js",
         "day17": "node ./day17/index.js",
-        "day18": "node ./day18/index.js"
+        "day18": "node ./day18/index.js",
+        "day19": "node ./day19/index.js",
+        "day20": "node ./day20/index.js"
     },
     "repository": {
         "type": "git",
