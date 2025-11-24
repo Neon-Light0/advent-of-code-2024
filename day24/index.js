@@ -22,33 +22,45 @@ for (const gate of gates){
 }
 
 function getSum(a,b){
-    const valLookup2 = structuredClone(a)
+    const valLookup = structuredClone(a)
     const opLookup = structuredClone(b);
 
-    function helper(val){
-        if (valLookup2.has(val)) return valLookup2.get(val);
+    function helper(val, level){
+        if (valLookup.has(val)) {
+            return valLookup.get(val);
+        }
+        
+        const s = '  '.repeat(level); // 4 spaces per level
 
-        const left = helper(opLookup.get(val)[0]);
-        const right = helper(opLookup.get(val)[2]);
+        console.log(s + val + ' = ' + opLookup.get(val));
         const op = opLookup.get(val)[1];
+        const left = helper(opLookup.get(val)[0], level + 1);
+        let value;
 
         switch (op){
             case 'XOR':
-                return left ^ right;
+                value =  left ^ helper(opLookup.get(val)[2], level + 1);
+                break;
             case 'OR':
-                return left | right;
+                value = left | helper(opLookup.get(val)[2], level + 1);
+                break;
             default:
-                return left & right;
+                value =  left & helper(opLookup.get(val)[2], level + 1);
+                break;
         }
+
+        valLookup.set(val, value);
+        return value;
     }
 
-    for (const [val, _] of opLookup){
-        if (valLookup2.has(val)) continue;
-        
-        valLookup2.set(val, helper(val));
+    for (let i = 0; i <= 45; i++){
+        let val = 'z' + String(i).padStart(2, '0');
+        console.log('------------------------');
+        console.log(val);
+        helper(val, 1);
     }
 
-    const result = [...valLookup2].filter(a => a[0][0] === 'z').toSorted((a, b) => b[0].localeCompare(a[0]));
+    const result = [...valLookup].filter(a => a[0][0] === 'z').toSorted((a, b) => b[0].localeCompare(a[0]));
 
     let final = 0n;
     
@@ -89,43 +101,9 @@ console.log(`x: ${valX}, y: ${valY}`);
 console.log(`x binary: ${xStr}`);
 console.log(`y binary: ${yStr}`);
 const valZ = valX + valY;
+console.log(`expected answer is ${valZ}.`);
 
-for (let i = 0; i < gates.length; i++){
-    for (let j = i+1; j < gates.length; j++){
-        for (let k = 0; k < gates.length; k++){
-            for (let l = k; l < gates.length; l++){
-                // disallow overlaps (no shared indices)
-                if (i == k || i == l || j == k || j == l)
-                    continue;
+const answer = ['z05', 'jst', 'z15', 'dnt', 'mcm', 'gdf', 'gwc', 'z30'];
+console.log(answer.toSorted((a, b) => a.localeCompare(b)));
 
-                // avoid duplicates by ordering the pairs
-                if (k < j)  
-                    continue;
-                
-                const newGates = structuredClone(gates);
-                const temp1 = newGates[i];
-                const temp2 = newGates[j];
-                const temp3 = newGates[k];
-                const temp4 = newGates[l];
-
-                newGates[i] = temp1.split(' -> ')[0] + ' -> ' + temp2.split(' -> ')[1];
-                newGates[j] = temp2.split(' -> ')[0] + ' -> ' + temp1.split(' -> ')[1];
-                newGates[k] = temp3.split(' -> ')[0] + ' -> ' + temp4.split(' -> ')[1];
-                newGates[l] = temp4.split(' -> ')[0] + ' -> ' + temp3.split(' -> ')[1];
-
-                const opLookup2 = new Map();
-
-                for (const gate of newGates){
-                    const [op, val] = gate.split(' -> ');
-                    op.trim();
-                    val.trim();
-                    opLookup2.set(val, op.split(' '));
-                }
-
-                if (getSum(valLookup, opLookup2) === valZ){
-                    console.log(`${i},${j},${k},${l}`);
-                }
-            }
-        }
-    }
-}
+const finalAnswer = 'dnt,gdf,gwc,jst,mcm,z05,z15,z30';
