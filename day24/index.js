@@ -30,7 +30,7 @@ function getSum(a,b){
             return valLookup.get(val);
         }
         
-        const s = '  '.repeat(level); // 4 spaces per level
+        const s = '  '.repeat(level); // 2 spaces per level
 
         console.log(s + val + ' = ' + opLookup.get(val));
         const op = opLookup.get(val)[1];
