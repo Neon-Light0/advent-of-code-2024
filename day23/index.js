@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-const links = fs.readFileSync("./day23/input.txt", "utf-8").split('\r\n').map(line=>{return line.split('-')})
+const links = fs.readFileSync("./day23/input.txt", "utf-8").split(/\r?\n/).filter(line => line).map(line=>{return line.trim().split('-')})
 const edgeMap = new Map();
 let comps = new Set();
 
